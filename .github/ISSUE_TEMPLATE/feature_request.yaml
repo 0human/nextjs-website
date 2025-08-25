@@ -1,0 +1,48 @@
+name: Feature Request（新功能）
+description: Adding new features to the website.（为网站添加新功能）
+labels: ["feature"]
+assignees:
+  - 0humanbuilder
+body:
+  - type: dropdown
+    id: use-latest
+    attributes:
+      label: Use Latest Version(是否基于最新版本)
+      description: Are you performing feature requests for the latest version? (是否基于最新版本进行功能请求)
+      options:
+        - Yes(是)
+        - No(否)
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: based-version
+    attributes:
+      label: Based Version(基于版本)
+      description: Please specify which version to base on. (请指定基于哪个版本进行功能请求)
+      placeholder: ex. 1.0.2
+    validations:
+      required: false
+  - type: textarea
+    id: prompt
+    attributes:
+      label: prompt(关键词)
+      description: Please provide a detailed description of the feature. (请详细描述功能需求)
+    validations:
+      required: true
+  - type: dropdown
+    id: will-fork
+    attributes:
+      label: Is a fork necessary(是否需要 fork)
+      description: If the forked version does not support further forking, it will never be merged into the latest version.（如果选择分叉的版本不支持继续分叉，分叉之后永远不会合并到最新版本）
+      options:
+        - Yes(是)
+        - No(否)
+      default: 1
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your contribution to building the front-end website for testing AI.
+        感谢为测试 AI 构建前端网站做出的贡献。

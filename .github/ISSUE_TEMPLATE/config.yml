@@ -1,0 +1,6 @@
+
+blank_issues_enabled: false # 禁止用户不使用模板创建Issue（强制使用模板）
+contact_links:
+  - name: Discussions (其他讨论)
+    url: https://github.com/0human/nextjs-website/discussions
+    about: If you have any suggestions or ideas for process optimization, feel free to discuss them here. （如果有关于流程优化或者建议可以在这里面讨论）
