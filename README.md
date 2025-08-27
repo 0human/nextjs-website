@@ -25,7 +25,7 @@
 
 ## 项目地址
 
-[GitHub 仓库](https://github.com/yanguoyu/nextjs-website)
+[GitHub 仓库](https://github.com/0human/nextjs-website)
 
 ## 开始使用
 
