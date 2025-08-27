@@ -9,23 +9,22 @@ export default function Home() {
   });
   
   useEffect(() => {
-    // 尝试从 GitHub API 获取实时数据
+    // 从我们的服务端 API 路由获取 GitHub 统计数据
     const fetchGithubStats = async () => {
       try {
-        // 由于 GitHub API 有访问限制，这里使用模拟数据
-        // 在实际项目中，可以使用服务器端代理来避免 CORS 问题和 API 限制
-        // 这里设置一个模拟的异步延迟
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // 调用我们的服务端 API 路由，避免客户端直接调用 GitHub API 导致的 CORS 问题和 API 限制
+        const response = await fetch('/api/github-stats');
         
-        // 模拟数据，实际项目中应该替换为真实的 API 调用
-        // const response = await fetch('https://api.github.com/repos/0human/nextjs-website');
-        // const data = await response.json();
-        // setGithubStats({ stars: data.stargazers_count, watchers: data.subscribers_count });
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
         
-        // 模拟一些随机数据以展示效果
+        const data = await response.json();
+        
+        // 更新统计数据状态
         setGithubStats({
-          stars: Math.floor(Math.random() * 1000),
-          watchers: Math.floor(Math.random() * 200)
+          stars: data.stars || 0,
+          watchers: data.watchers || 0
         });
       } catch (error) {
         console.error('Failed to fetch GitHub stats:', error);
