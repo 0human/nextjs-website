@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Website Project
 
-## Getting Started
+这是一个基于 Next.js 的网站项目。项目遵循敏捷开发流程，通过 GitHub Issues 来追踪和管理新功能开发与 bug 修复。
 
-First, run the development server:
+## 项目特点
+
+- 基于 Next.js 14 构建
+- 使用 TypeScript 确保类型安全
+- 响应式设计，适配各种设备
+- 通过 GitHub Issues 进行任务管理
+
+## 项目管理流程
+
+本项目采用 Issue 驱动开发模式：
+
+1. 所有新功能需求和 bug 修复都通过创建 GitHub Issue 来提出
+2. 开发团队会定期评审 Issues 并分配任务
+3. 开发完成后，通过 Pull Request 提交代码，并关联相关 Issue
+4. 代码审查通过后，合并到主分支
+
+## GitHub 统计
+
+- ⭐ Stars: 0
+- 👁️ Watch: 0
+
+## 项目地址
+
+[GitHub 仓库](https://github.com/yanguoyu/nextjs-website)
+
+## 开始使用
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发服务器
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 构建生产版本
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 运行生产版本
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run start
+```
