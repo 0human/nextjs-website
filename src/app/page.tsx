@@ -44,12 +44,12 @@ export default function Home() {
         <section className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-white">项目管理流程</h2>
           <div className="space-y-4">
-            <p className="text-slate-700 dark:text-slate-200">本项目采用 Issue 驱动开发模式：</p>
+            <p className="text-slate-700 dark:text-slate-200">本项目采用 AI 驱动的 Issue 开发模式：</p>
             <ol className="list-decimal list-inside space-y-2 text-slate-700 dark:text-slate-200">
               <li>所有新功能需求和 bug 修复都通过创建 GitHub Issue 来提出</li>
-              <li>开发团队会定期评审 Issues 并分配任务</li>
-              <li>开发完成后，通过 Pull Request 提交代码，并关联相关 Issue</li>
-              <li>代码审查通过后，合并到主分支</li>
+              <li>AI 根据 Issue 的描述自动生成相应的代码实现</li>
+              <li>AI 会创建 Pull Request 并关联相关 Issue</li>
+              <li>人工只需要预览 PR 并同意合并即可完成开发流程</li>
             </ol>
           </div>
         </section>

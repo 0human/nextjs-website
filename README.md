@@ -11,12 +11,12 @@
 
 ## 项目管理流程
 
-本项目采用 Issue 驱动开发模式：
+本项目采用 AI 驱动的 Issue 开发模式：
 
 1. 所有新功能需求和 bug 修复都通过创建 GitHub Issue 来提出
-2. 开发团队会定期评审 Issues 并分配任务
-3. 开发完成后，通过 Pull Request 提交代码，并关联相关 Issue
-4. 代码审查通过后，合并到主分支
+2. AI 根据 Issue 的描述自动生成相应的代码实现
+3. AI 会创建 Pull Request 并关联相关 Issue
+4. 人工只需要预览 PR 并同意合并即可完成开发流程
 
 ## GitHub 统计
 
