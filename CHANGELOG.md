@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/0human/nextjs-website/compare/v1.2.0...v1.2.1) (2025-08-28)
+
+### Bug Fixes
+
+* 将自动部署从 release 中移除，并单独新建一个 action 监听有 tag 被 push 时触发部署到 vercel ([#12](https://github.com/0human/nextjs-website/issues/12)) ([8828374](https://github.com/0human/nextjs-website/commit/8828374cef7d80568b73a04fb478c04f97e91c7f))
+
 ## [1.2.0](https://github.com/0human/nextjs-website/compare/v1.1.0...v1.2.0) (2025-08-28)
 
 ### Features
