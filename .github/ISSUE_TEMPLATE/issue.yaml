@@ -1,17 +1,36 @@
-name: Bug Report（ bug 修复）
-description: Perform bug fixing based on the description.（将根据描述进行 bug 修复）
-labels: ["bug"]
+name: Create an issue（创建一个 issue）
+description: Make code modifications based on the description and commit; submit a pull request.（将根据描述进行代码修改并提交）
 assignees:
   - 0humanbuilder
 body:
   - type: dropdown
+    id: type
+    attributes:
+      label: Type(类型)
+      description: Please select the type of modification. (请选择修改类型)
+      options:
+        - feat
+        - fix
+        - docs
+        - style
+        - refactor
+        - perf
+        - test
+        - build
+        - ci
+        - chore
+        - revert
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
     id: use-latest
     attributes:
       label: Use Latest Version(是否基于最新版本)
-      description: Are you performing bug fixes for the latest version? (是否基于最新版本进行 bug 修复)
+      description: Is the modification based on the latest version? (是否基于最新版本进行修改)
       options:
-        - Yes(是)
-        - No(否)
+        - Yes/是
+        - No/否
       default: 0
     validations:
       required: true
@@ -19,7 +38,7 @@ body:
     id: based-version
     attributes:
       label: Based Version(基于版本)
-      description: Please specify which version to base on. (请指定基于哪个版本进行修复)
+      description: Please specify which version to base on. (请指定基于哪个版本进行修改)
       placeholder: ex. 1.0.2
     validations:
       required: false
@@ -27,7 +46,7 @@ body:
     id: prompt
     attributes:
       label: prompt(关键词)
-      description: Please provide a detailed description of the bug, and specify the proposed fix. (请详细描述问题现象，并说明预期修复方案)
+      description: Please provide a detailed description of how the code needs to be modified. (请详细描述需要如何修改代码)
     validations:
       required: true
   - type: dropdown
@@ -36,8 +55,8 @@ body:
       label: Is a fork necessary(是否需要 fork)
       description: If the forked version does not support further forking, it will never be merged into the latest version.（如果选择分叉的版本不支持继续分叉，分叉之后永远不会合并到最新版本）
       options:
-        - Yes(是)
-        - No(否)
+        - Yes/是
+        - No/否
       default: 1
     validations:
       required: true

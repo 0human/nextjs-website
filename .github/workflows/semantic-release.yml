@@ -58,3 +58,20 @@ jobs:
           # 如果需要发布到 npm，取消下面的注释并添加相应的 secrets
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
+
+      - name: Get Tag Name
+        id: tag
+        run: |
+          TAG=$(git describe --tags --always)
+          echo "value=$TAG" >> $GITHUB_OUTPUT
+          
+      - name: Create file
+        run: |
+          echo "TAG=${{ steps.tag.outputs.value }}" > tag.env
+          
+      - name: Upload Tag Name
+        uses: actions/upload-artifact@v4
+        with:
+          name: tag
+          path: tag.env
+          retention-days: 1
