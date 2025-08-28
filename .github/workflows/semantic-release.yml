@@ -17,11 +17,23 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Get App Installation Token
+        id: get_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 需要获取完整的历史记录以进行版本分析
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.get_token.outputs.token }}
+
+      - name: Setup Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@0human.noreply.github.com"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
