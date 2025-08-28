@@ -1,0 +1,70 @@
+name: Deploy Tag to Vercel
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  # 可选：允许手动触发工作流
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Extract version from tag
+        id: extract_version
+        run: |
+          # 获取当前触发工作流的tag
+          TAG=${GITHUB_REF#refs/tags/}
+          # 移除版本号前面的 v 字符（如果有）
+          VERSION=${TAG#v}
+          # 创建域名前缀（例如 v1-0-0）
+          SUBDOMAIN="nextjs-v${VERSION//./-}"
+          
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "subdomain=$SUBDOMAIN" >> $GITHUB_OUTPUT
+          
+          echo "Deploying tag $TAG (version $VERSION) to Vercel with subdomain $SUBDOMAIN"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Install Vercel CLI
+        run: pnpm add -g vercel
+
+      - name: Deploy to Vercel with tag prefix
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID || '' }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID || '' }}
+        run: |
+          # 创建临时配置文件指定项目ID
+          cat > vercel.json << EOF
+          {"projectId":"$VERCEL_PROJECT_ID", "orgId":"$VERCEL_ORG_ID"}
+          EOF
+          
+          # 部署到 Vercel，使用版本号作为前缀的域名
+          npx vercel deploy --prod --confirm --token $VERCEL_TOKEN --domains ${{ steps.extract_version.outputs.subdomain }}.0human.website

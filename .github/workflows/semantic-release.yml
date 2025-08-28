@@ -58,26 +58,3 @@ jobs:
           # 如果需要发布到 npm，取消下面的注释并添加相应的 secrets
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
-
-      - name: Get latest tag
-        id: get_latest_tag
-        run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0)
-          echo "latest_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
-
-      - name: Deploy to Vercel with tag prefix
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          # 提取版本号并创建域名前缀
-          VERSION=${{ steps.get_latest_tag.outputs.latest_tag }}
-          # 移除版本号前面的 v 字符（如果有）
-          VERSION=${VERSION#v}
-          # 创建域名前缀（例如 v1-0-0）
-          SUBDOMAIN="nextjs-v${VERSION//./-}"
-          
-          echo "Deploying version $VERSION to Vercel with subdomain $SUBDOMAIN"
-          
-          # 部署到 Vercel，使用版本号作为前缀的域名
-          npx vercel deploy --prod --confirm --token $VERCEL_TOKEN --project-id $VERCEL_PROJECT_ID --domains $SUBDOMAIN.0human.website
