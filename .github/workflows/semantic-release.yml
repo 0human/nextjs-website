@@ -1,0 +1,43 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - main
+  # 可选：允许手动触发工作流
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 需要获取完整的历史记录以进行版本分析
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 如果需要发布到 npm，取消下面的注释并添加相应的 secrets
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
