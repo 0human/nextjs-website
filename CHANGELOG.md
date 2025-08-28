@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/0human/nextjs-website/compare/v1.0.0...v1.1.0) (2025-08-28)
+
+### Features
+
+* 只打 tag 不发布 release ([#10](https://github.com/0human/nextjs-website/issues/10)) ([6f12634](https://github.com/0human/nextjs-website/commit/6f12634f8fb1acaace189b8eca9229ce4208267f))
+
 ## 1.0.0 (2025-08-28)
 
 ### Features
