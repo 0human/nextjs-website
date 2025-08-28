@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/0human/nextjs-website/compare/v1.1.0...v1.2.0) (2025-08-28)
+
+### Features
+
+* 自动部署 tag 到vercel 域名 nextjs-tag.0human.website ([#11](https://github.com/0human/nextjs-website/issues/11)) ([9619ecb](https://github.com/0human/nextjs-website/commit/9619ecb5bddb550101b7b3400607bf9bb9d9c10b))
+
 ## [1.1.0](https://github.com/0human/nextjs-website/compare/v1.0.0...v1.1.0) (2025-08-28)
 
 ### Features
