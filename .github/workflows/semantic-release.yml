@@ -23,16 +23,16 @@ jobs:
           fetch-depth: 0 # 需要获取完整的历史记录以进行版本分析
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
 
       - name: Install dependencies
         run: pnpm install
