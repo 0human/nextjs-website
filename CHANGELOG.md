@@ -1,3 +1,9 @@
+## [1.2.7](https://github.com/0human/nextjs-website/compare/v1.2.6...v1.2.7) (2025-08-29)
+
+### Bug Fixes
+
+* fix show version and commit hash when merge into main ([#18](https://github.com/0human/nextjs-website/issues/18)) ([f3b6a28](https://github.com/0human/nextjs-website/commit/f3b6a28c904a73761867fa6cb2476e0b484c85d7))
+
 ## [1.2.6](https://github.com/0human/nextjs-website/compare/v1.2.5...v1.2.6) (2025-08-29)
 
 ### Bug Fixes
