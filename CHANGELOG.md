@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/0human/nextjs-website/compare/v1.2.1...v1.2.2) (2025-08-29)
+
+### Bug Fixes
+
+* fix tag match ([#13](https://github.com/0human/nextjs-website/issues/13)) ([6d7be47](https://github.com/0human/nextjs-website/commit/6d7be470d15b43af8ada1bdde5a720369b4fe3e0))
+
 ## [1.2.1](https://github.com/0human/nextjs-website/compare/v1.2.0...v1.2.1) (2025-08-28)
 
 ### Bug Fixes
