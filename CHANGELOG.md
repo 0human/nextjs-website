@@ -1,3 +1,9 @@
+## [1.2.3](https://github.com/0human/nextjs-website/compare/v1.2.2...v1.2.3) (2025-08-29)
+
+### Bug Fixes
+
+* Use vercel command to deploy to vercel ([#14](https://github.com/0human/nextjs-website/issues/14)) ([759d30a](https://github.com/0human/nextjs-website/commit/759d30a7d9e6016c3a118935135c2e4f1f064fd4))
+
 ## [1.2.2](https://github.com/0human/nextjs-website/compare/v1.2.1...v1.2.2) (2025-08-29)
 
 ### Bug Fixes
