@@ -35,8 +35,8 @@ export default function Home() {
     fetchGithubStats();
   }, []);
 
-  const commitHash = process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_COMMIT_SHA
-  const branchName = process.env.VERCEL_GIT_COMMIT_REF || process.env.NEXT_PUBLIC_BRANCH
+  const commitHash = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_COMMIT_SHA
+  const branchName = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || process.env.NEXT_PUBLIC_BRANCH
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 p-8 flex flex-col items-center justify-center">
