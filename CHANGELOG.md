@@ -1,3 +1,9 @@
+## [1.2.8](https://github.com/0human/nextjs-website/compare/v1.2.7...v1.2.8) (2025-08-29)
+
+### Bug Fixes
+
+* fix read vercel env ([#19](https://github.com/0human/nextjs-website/issues/19)) ([083284c](https://github.com/0human/nextjs-website/commit/083284c9eaa8b9c061ed5837ed5b7bfe38f8b7f9))
+
 ## [1.2.7](https://github.com/0human/nextjs-website/compare/v1.2.6...v1.2.7) (2025-08-29)
 
 ### Bug Fixes
