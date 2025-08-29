@@ -122,6 +122,7 @@ export default function Home() {
       </main>
       
       <footer className="mt-12 text-center text-slate-500 dark:text-slate-400">
+        <p>当前版本：{process.env.NEXT_PUBLIC_VERSION}</p>
         <p>© {new Date().getFullYear()} Next.js Website Project</p>
       </footer>
     </div>
