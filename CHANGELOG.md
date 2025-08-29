@@ -1,3 +1,9 @@
+## [1.2.10](https://github.com/0human/nextjs-website/compare/v1.2.9...v1.2.10) (2025-08-29)
+
+### Bug Fixes
+
+* fix trigger deploy by tag push ([#21](https://github.com/0human/nextjs-website/issues/21)) ([eb4a44c](https://github.com/0human/nextjs-website/commit/eb4a44ce46eef87fe76df9b4c8d1191ba280989b))
+
 ## [1.2.9](https://github.com/0human/nextjs-website/compare/v1.2.8...v1.2.9) (2025-08-29)
 
 ### Bug Fixes
