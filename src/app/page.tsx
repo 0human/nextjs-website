@@ -122,7 +122,20 @@ export default function Home() {
       </main>
       
       <footer className="mt-12 text-center text-slate-500 dark:text-slate-400">
-        <p>当前版本：{process.env.NEXT_PUBLIC_VERSION}</p>
+        <p>当前版本：{process.env.NEXT_PUBLIC_BRANCH === 'main' || process.env.NEXT_PUBLIC_BRANCH === 'master' ? 'latest' : process.env.NEXT_PUBLIC_VERSION}</p>
+        <p>
+          部署哈希：
+          {process.env.NEXT_PUBLIC_COMMIT_SHA && (
+            <a 
+              href={`https://github.com/0human/nextjs-website/commit/${process.env.NEXT_PUBLIC_COMMIT_SHA}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+            >
+              {process.env.NEXT_PUBLIC_COMMIT_SHA.substring(0, 7)}
+            </a>
+          )}
+        </p>
         <p>© {new Date().getFullYear()} Next.js Website Project</p>
       </footer>
     </div>
