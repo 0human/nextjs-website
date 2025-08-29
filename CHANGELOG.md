@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/0human/nextjs-website/compare/v1.2.3...v1.2.4) (2025-08-29)
+
+### Bug Fixes
+
+* 如果是主分支则不显示版本号，直接显示 latest。不论什么情况都显示部署 hash 并链接到 github。 ([#15](https://github.com/0human/nextjs-website/issues/15)) ([d653b0d](https://github.com/0human/nextjs-website/commit/d653b0d7adbf123fe8b44e3487b1379cb52c8cab))
+
 ## [1.2.3](https://github.com/0human/nextjs-website/compare/v1.2.2...v1.2.3) (2025-08-29)
 
 ### Bug Fixes
