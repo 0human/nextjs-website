@@ -1,3 +1,9 @@
+## [1.2.9](https://github.com/0human/nextjs-website/compare/v1.2.8...v1.2.9) (2025-08-29)
+
+### Bug Fixes
+
+* fix deploy tags ([#20](https://github.com/0human/nextjs-website/issues/20)) ([45b6335](https://github.com/0human/nextjs-website/commit/45b6335d3015efa302df44ed02456f94f4a076f4))
+
 ## [1.2.8](https://github.com/0human/nextjs-website/compare/v1.2.7...v1.2.8) (2025-08-29)
 
 ### Bug Fixes
