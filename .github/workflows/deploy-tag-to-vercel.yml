@@ -3,7 +3,7 @@ name: Deploy Tag to Vercel
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - v*.**
   # 可选：允许手动触发工作流
   workflow_dispatch:
 
