@@ -1,3 +1,9 @@
+## [1.2.5](https://github.com/0human/nextjs-website/compare/v1.2.4...v1.2.5) (2025-08-29)
+
+### Bug Fixes
+
+* Merge issue template to a template ([#16](https://github.com/0human/nextjs-website/issues/16)) ([abdc85a](https://github.com/0human/nextjs-website/commit/abdc85a0ce745b4f1ff8b8041db05a51dcd57701))
+
 ## [1.2.4](https://github.com/0human/nextjs-website/compare/v1.2.3...v1.2.4) (2025-08-29)
 
 ### Bug Fixes
