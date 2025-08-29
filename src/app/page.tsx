@@ -34,6 +34,9 @@ export default function Home() {
     
     fetchGithubStats();
   }, []);
+
+  const commitHash = process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_COMMIT_SHA
+  const branchName = process.env.VERCEL_GIT_COMMIT_REF || process.env.NEXT_PUBLIC_BRANCH
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 p-8 flex flex-col items-center justify-center">
@@ -122,17 +125,17 @@ export default function Home() {
       </main>
       
       <footer className="mt-12 text-center text-slate-500 dark:text-slate-400">
-        <p>当前版本：{process.env.NEXT_PUBLIC_BRANCH === 'main' || process.env.NEXT_PUBLIC_BRANCH === 'master' ? 'latest' : process.env.NEXT_PUBLIC_VERSION}</p>
+        <p>当前版本：{branchName === 'main' ? 'latest' : process.env.NEXT_PUBLIC_VERSION}</p>
         <p>
           部署哈希：
-          {process.env.NEXT_PUBLIC_COMMIT_SHA && (
+          {commitHash && (
             <a 
-              href={`https://github.com/0human/nextjs-website/commit/${process.env.NEXT_PUBLIC_COMMIT_SHA}`}
+              href={`https://github.com/0human/nextjs-website/commit/${commitHash}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
             >
-              {process.env.NEXT_PUBLIC_COMMIT_SHA.substring(0, 7)}
+              {commitHash.substring(0, 7)}
             </a>
           )}
         </p>
