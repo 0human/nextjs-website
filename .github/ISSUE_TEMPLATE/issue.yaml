@@ -29,8 +29,8 @@ body:
       label: Use Latest Version(是否基于最新版本)
       description: Is the modification based on the latest version? (是否基于最新版本进行修改)
       options:
-        - Yes
-        - No
+        - Yes/是
+        - No/否
       default: 0
     validations:
       required: true
@@ -55,8 +55,8 @@ body:
       label: Is a fork necessary(是否需要 fork)
       description: If the forked version does not support further forking, it will never be merged into the latest version.（如果选择分叉的版本不支持继续分叉，分叉之后永远不会合并到最新版本）
       options:
-        - Yes(是)
-        - No(否)
+        - Yes/是
+        - No/否
       default: 1
     validations:
       required: true
