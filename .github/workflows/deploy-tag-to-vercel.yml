@@ -1,14 +1,16 @@
 name: Deploy Version on Tag
 
 on:
+  create:
+    tags:
+      - v*.**
   push:
     tags:
-      - 'v*' # 匹配 v1.0.0 这样的标签
-  # 可选：允许手动触发工作流
-  workflow_dispatch:
+      - v*.**
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   deploy:
