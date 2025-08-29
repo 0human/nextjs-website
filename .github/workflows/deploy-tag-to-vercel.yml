@@ -1,12 +1,11 @@
 name: Deploy Version on Tag
 
 on:
-  create:
-    tags:
-      - v*.**
-  push:
-    tags:
-      - v*.**
+  workflow_run:
+    workflows: [Semantic Release]
+    types:
+      - completed
+    branches: [main]
 
 permissions:
   contents: read
@@ -15,6 +14,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
       
@@ -41,3 +41,9 @@ jobs:
         run: |
           chmod +x ./deploy-with-tag.sh
           ./deploy-with-tag.sh
+
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The Semantic Release workflow failed'
