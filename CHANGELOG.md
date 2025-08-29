@@ -1,3 +1,9 @@
+## [1.2.6](https://github.com/0human/nextjs-website/compare/v1.2.5...v1.2.6) (2025-08-29)
+
+### Bug Fixes
+
+* Fix template grammatical errors ([#17](https://github.com/0human/nextjs-website/issues/17)) ([599ecfd](https://github.com/0human/nextjs-website/commit/599ecfd6b8aa8420f680f2f9d1adf30dd0fd9fd6))
+
 ## [1.2.5](https://github.com/0human/nextjs-website/compare/v1.2.4...v1.2.5) (2025-08-29)
 
 ### Bug Fixes
